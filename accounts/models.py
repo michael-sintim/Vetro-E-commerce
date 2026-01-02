@@ -44,7 +44,7 @@ class Customer(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=20)
     birth_date = models.DateField(null=True,blank=True)
-    membership = models.CharField(choices=MEMBERSHIP_CHOICES.choices,max_length=1,default=MEMBERSHIP_CHOICES.bronze)
+    mem = models.CharField(choices=MEMBERSHIP_CHOICES.choices,max_length=1,default=MEMBERSHIP_CHOICES.bronze)
 
     def __str__(self):
         return self.user.username
